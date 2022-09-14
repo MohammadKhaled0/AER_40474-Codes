@@ -1,0 +1,867 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     38201,        857]
+NotebookOptionsPosition[     37368,        833]
+NotebookOutlinePosition[     37766,        849]
+CellTagsIndexPosition[     37723,        846]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Q11.", "Title",
+ CellChangeTimes->{{3.844577131315869*^9, 
+  3.8445771339044123`*^9}},ExpressionUUID->"abae2fb3-3809-467a-8fd1-\
+41ed0b642578"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+
+\[Phi] = k*x*y ; k = constant, Sketch the flow pattern\
+\>", "Section",
+ CellChangeTimes->{{3.8445771375612926`*^9, 
+  3.844577204599925*^9}},ExpressionUUID->"0b9a835a-66a3-4e79-b037-\
+350d2c135b51"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Phi]", "1"], "[", 
+    RowBox[{"y_", ",", "x_"}], "]"}], " ", "==", " ", 
+   RowBox[{"x", "*", "y"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Phi]", "2"], "[", 
+    RowBox[{"y_", ",", "x_"}], "]"}], " ", "==", " ", 
+   RowBox[{"2", "*", "x", "*", "y"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Phi]", "3"], "[", 
+    RowBox[{"y_", ",", "x_"}], "]"}], " ", "==", " ", 
+   RowBox[{"3", "*", "x", "*", "y"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Phi]", "4"], "[", 
+    RowBox[{"y_", ",", "x_"}], "]"}], " ", "==", " ", 
+   RowBox[{"4", "*", "x", "*", "y"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Phi]", "5"], "[", 
+    RowBox[{"y_", ",", "x_"}], "]"}], " ", "==", " ", 
+   RowBox[{"5", "*", "x", "*", "y"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Psi]", "1"], "[", 
+    RowBox[{"y_", ",", "x_"}], "]"}], " ", "==", " ", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "2"], "*", 
+     SuperscriptBox["y", "2"]}], "-", 
+    RowBox[{
+     FractionBox["1", "2"], "*", 
+     SuperscriptBox["x", "2"]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Psi]", "2"], "[", 
+    RowBox[{"y_", ",", "x_"}], "]"}], " ", "==", " ", 
+   RowBox[{
+    SuperscriptBox["y", "2"], "-", 
+    SuperscriptBox["x", "2"]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Psi]", "3"], "[", 
+    RowBox[{"y_", ",", "x_"}], "]"}], " ", "==", " ", 
+   RowBox[{
+    RowBox[{
+     FractionBox["3", "2"], "*", 
+     SuperscriptBox["y", "2"]}], "-", 
+    RowBox[{
+     FractionBox["3", "2"], "*", 
+     SuperscriptBox["x", "2"]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Psi]", "4"], "[", 
+    RowBox[{"y_", ",", "x_"}], "]"}], " ", "==", " ", 
+   RowBox[{
+    RowBox[{"2", "*", 
+     SuperscriptBox["y", "2"]}], "-", 
+    RowBox[{"2", "*", 
+     SuperscriptBox["x", "2"]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Psi]", "5"], "[", 
+    RowBox[{"y_", ",", "x_"}], "]"}], " ", "==", " ", 
+   RowBox[{
+    RowBox[{
+     FractionBox["5", "2"], "*", 
+     SuperscriptBox["y", "2"]}], "-", 
+    RowBox[{
+     FractionBox["5", "2"], "*", 
+     SuperscriptBox["x", "2"]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"xMin", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"xMax", " ", "=", " ", "10"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yMin", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yMax", " ", "=", " ", "10"}], ";"}], "\n", 
+ RowBox[{"Legended", "[", "\n", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Phi]", "1"], "[", 
+        RowBox[{"y", ",", "x"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "xMin", ",", "xMax"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "yMin", ",", "yMax"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", " ", "->", " ", 
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", " ", "Arrow", ",", 
+          RowBox[{"Thickness", " ", "[", "0.005", "]"}]}], "}"}]}]}], "]"}], 
+     ",", "\n", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Phi]", "2"], "[", 
+        RowBox[{"y", ",", "x"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "xMin", ",", "xMax"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "yMin", ",", "yMax"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", " ", "->", " ", 
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", " ", "Arrow", ",", 
+          RowBox[{"Thickness", " ", "[", "0.005", "]"}]}], "}"}]}]}], "]"}], 
+     ",", "\n", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Phi]", "3"], "[", 
+        RowBox[{"y", ",", "x"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "xMin", ",", "xMax"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "yMin", ",", "yMax"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", " ", "->", " ", 
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", " ", "Arrow", ",", 
+          RowBox[{"Thickness", " ", "[", "0.005", "]"}]}], "}"}]}]}], "]"}], 
+     ",", "\n", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Phi]", "4"], "[", 
+        RowBox[{"y", ",", "x"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "xMin", ",", "xMax"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "yMin", ",", "yMax"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", " ", "->", " ", 
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", " ", "Arrow", ",", 
+          RowBox[{"Thickness", " ", "[", "0.005", "]"}]}], "}"}]}]}], "]"}], 
+     ",", "\n", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Phi]", "5"], "[", 
+        RowBox[{"y", ",", "x"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "xMin", ",", "xMax"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "yMin", ",", "yMax"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", " ", "->", " ", 
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", " ", "Arrow", ",", 
+          RowBox[{"Thickness", " ", "[", "0.005", "]"}]}], "}"}]}]}], "]"}], 
+     ",", "\n", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Psi]", "1"], "[", 
+        RowBox[{"y", ",", "x"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "xMin", ",", "xMax"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "yMin", ",", "yMax"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", " ", "->", " ", 
+        RowBox[{"{", 
+         RowBox[{"Orange", ",", " ", "Arrow", ",", 
+          RowBox[{"Thickness", " ", "[", "0.005", "]"}]}], "}"}]}]}], "]"}], 
+     ",", "\n", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Psi]", "2"], "[", 
+        RowBox[{"y", ",", "x"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "xMin", ",", "xMax"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "yMin", ",", "yMax"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", " ", "->", " ", 
+        RowBox[{"{", 
+         RowBox[{"Orange", ",", " ", "Arrow", ",", 
+          RowBox[{"Thickness", " ", "[", "0.005", "]"}]}], "}"}]}]}], "]"}], 
+     ",", "\n", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Psi]", "3"], "[", 
+        RowBox[{"y", ",", "x"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "xMin", ",", "xMax"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "yMin", ",", "yMax"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", " ", "->", " ", 
+        RowBox[{"{", 
+         RowBox[{"Orange", ",", " ", "Arrow", ",", 
+          RowBox[{"Thickness", " ", "[", "0.005", "]"}]}], "}"}]}]}], "]"}], 
+     ",", "\n", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Psi]", "4"], "[", 
+        RowBox[{"y", ",", "x"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "xMin", ",", "xMax"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "yMin", ",", "yMax"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", " ", "->", " ", 
+        RowBox[{"{", 
+         RowBox[{"Orange", ",", " ", "Arrow", ",", 
+          RowBox[{"Thickness", " ", "[", "0.005", "]"}]}], "}"}]}]}], "]"}], 
+     ",", "\n", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[Psi]", "5"], "[", 
+        RowBox[{"y", ",", "x"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "xMin", ",", "xMax"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "yMin", ",", "yMax"}], "}"}], ",", " ", 
+       RowBox[{"PlotStyle", " ", "->", " ", 
+        RowBox[{"{", 
+         RowBox[{"Orange", ",", " ", "Arrow", ",", 
+          RowBox[{"Thickness", " ", "[", "0.005", "]"}]}], "}"}]}]}], "]"}], 
+     ",", "\n", 
+     RowBox[{"AxisLabel", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<y\>\"", ",", "\"\<x\>\""}], "}"}]}], ",", "\n", 
+     RowBox[{
+     "PlotLabel", " ", "->", " ", 
+      "\"\<Stream Function and Velocity Potential Function\>\""}], ",", "\n", 
+     RowBox[{"PlotRange", " ", "->", " ", "All"}], ","}], "]"}], ",", "\n", 
+   RowBox[{"SwatchLegend", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Blue", ",", "Orange"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Stream\>\"", ",", "\"\<Potential\>\""}], "}"}]}], "]"}]}], 
+  "]"}]}], "Code",
+ CellChangeTimes->{{3.8445772232393217`*^9, 3.844577384358886*^9}, {
+  3.8445810066824102`*^9, 3.8445810085743275`*^9}, {3.8445811779796906`*^9, 
+  3.844581191605942*^9}, {3.8445816050476494`*^9, 3.8445816170687666`*^9}, {
+  3.8445816566555953`*^9, 3.844581942165724*^9}, {3.844581999289044*^9, 
+  3.8445821760068617`*^9}, {3.8445822357195024`*^9, 3.844582331740528*^9}, {
+  3.8445823636138353`*^9, 3.844582555947731*^9}, {3.8445826003093367`*^9, 
+  3.844582790622388*^9}, {3.844583085841132*^9, 3.8445831476124945`*^9}, {
+  3.8445832567625046`*^9, 3.844583320804821*^9}, {3.844583384802188*^9, 
+  3.8445834850458374`*^9}},
+ CellLabel->
+  "In[122]:=",ExpressionUUID->"409bde85-2695-4bee-9bb5-fa1f23090818"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Show", "gcomb", 
+   "\"Could not combine the graphics objects in \
+\\!\\(\\*RowBox[{\\\"Show\\\", \\\"[\\\", RowBox[{GraphicsBox[List[List[], \
+List[]], List[Rule[DisplayFunction, Identity], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[PlotRangeClipping, True], Rule[ImagePadding, All], \
+Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[Automatic, \
+Automatic]], RuleDelayed[DisplayFunction, Identity], Rule[Frame, True], \
+Skeleton[8]]], \\\",\\\", GraphicsBox[List[List[], List[]], \
+List[Rule[DisplayFunction, Identity], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[PlotRangeClipping, True], Rule[ImagePadding, All], \
+Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[Automatic, \
+Automatic]], RuleDelayed[DisplayFunction, Identity], Rule[Frame, True], \
+Skeleton[8]]], \\\",\\\", GraphicsBox[List[List[], List[]], \
+List[Rule[DisplayFunction, Identity], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[PlotRangeClipping, True], Rule[ImagePadding, All], \
+Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[Automatic, \
+Automatic]], RuleDelayed[DisplayFunction, Identity], Rule[Frame, True], \
+Skeleton[8]]], \\\",\\\", GraphicsBox[List[List[], List[]], \
+List[Rule[DisplayFunction, Identity], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[PlotRangeClipping, True], Rule[ImagePadding, All], \
+Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[Automatic, \
+Automatic]], RuleDelayed[DisplayFunction, Identity], Rule[Frame, True], \
+Skeleton[8]]], \\\",\\\", GraphicsBox[List[List[], List[]], \
+List[Rule[DisplayFunction, Identity], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[PlotRangeClipping, True], Rule[ImagePadding, All], \
+Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[Automatic, \
+Automatic]], RuleDelayed[DisplayFunction, Identity], Rule[Frame, True], \
+Skeleton[8]]], \\\",\\\", GraphicsBox[List[List[], List[]], \
+List[Rule[DisplayFunction, Identity], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[PlotRangeClipping, True], Rule[ImagePadding, All], \
+Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[Automatic, \
+Automatic]], RuleDelayed[DisplayFunction, Identity], Rule[Frame, True], \
+Skeleton[8]]], \\\",\\\", GraphicsBox[List[List[], List[]], \
+List[Rule[DisplayFunction, Identity], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[PlotRangeClipping, True], Rule[ImagePadding, All], \
+Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[Automatic, \
+Automatic]], RuleDelayed[DisplayFunction, Identity], Rule[Frame, True], \
+Skeleton[8]]], \\\",\\\", GraphicsBox[List[List[], List[]], \
+List[Rule[DisplayFunction, Identity], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[PlotRangeClipping, True], Rule[ImagePadding, All], \
+Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[Automatic, \
+Automatic]], RuleDelayed[DisplayFunction, Identity], Rule[Frame, True], \
+Skeleton[8]]], \\\",\\\", GraphicsBox[List[List[], List[]], \
+List[Rule[DisplayFunction, Identity], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[PlotRangeClipping, True], Rule[ImagePadding, All], \
+Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[Automatic, \
+Automatic]], RuleDelayed[DisplayFunction, Identity], Rule[Frame, True], \
+Skeleton[8]]], \\\",\\\", GraphicsBox[List[List[], List[]], \
+List[Rule[DisplayFunction, Identity], Rule[PlotRangePadding, \
+List[List[Scaled[0.05`], Scaled[0.05`]], List[Scaled[0.05`], \
+Scaled[0.05`]]]], Rule[PlotRangeClipping, True], Rule[ImagePadding, All], \
+Rule[DisplayFunction, Identity], Rule[Axes, List[True, True]], \
+Rule[AxesLabel, List[None, None]], Rule[AxesOrigin, List[Automatic, \
+Automatic]], RuleDelayed[DisplayFunction, Identity], Rule[Frame, True], \
+Skeleton[8]]], \\\",\\\", RowBox[{\\\"\[LeftSkeleton]\\\", \\\"4\\\", \\\"\
+\[RightSkeleton]\\\"}]}], \\\"]\\\"}]\\).\"", 2, 136, 27, 
+   22547152883593490066, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.8445827969477673`*^9, 3.844582797480462*^9}, 
+   3.844583228029084*^9, 3.844583263709509*^9, 3.8445833222060213`*^9, 
+   3.844583419254465*^9, 3.8445835175717907`*^9},
+ CellLabel->
+  "During evaluation of \
+In[122]:=",ExpressionUUID->"cbb77441-55d2-43ff-808c-8e3735b0d14c"],
+
+Cell[BoxData[
+ TemplateBox[{
+   RowBox[{"Show", "[", 
+     RowBox[{
+       GraphicsBox[{{}, {}}, {
+        DisplayFunction -> Identity, PlotRangePadding -> {{
+            Scaled[0.05], 
+            Scaled[0.05]}, {
+            Scaled[0.05], 
+            Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
+         DisplayFunction -> Identity, Axes -> {True, True}, 
+         AxesLabel -> {None, None}, AxesOrigin -> {Automatic, Automatic}, 
+         DisplayFunction :> Identity, Frame -> True, 
+         FrameLabel -> {{None, None}, {None, None}}, 
+         FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+         GridLinesStyle -> Directive[
+           GrayLevel[0.5, 0.4]], 
+         Method -> {
+          "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+           "AxesInFront" -> True}, PlotRange -> {{0., 0.}, {0., 0.}}, 
+         PlotRangeClipping -> True, PlotRangePadding -> {
+           Scaled[0.02], 
+           Scaled[0.02]}, Ticks -> {Automatic, Automatic}}], ",", 
+       GraphicsBox[{{}, {}}, {
+        DisplayFunction -> Identity, PlotRangePadding -> {{
+            Scaled[0.05], 
+            Scaled[0.05]}, {
+            Scaled[0.05], 
+            Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
+         DisplayFunction -> Identity, Axes -> {True, True}, 
+         AxesLabel -> {None, None}, AxesOrigin -> {Automatic, Automatic}, 
+         DisplayFunction :> Identity, Frame -> True, 
+         FrameLabel -> {{None, None}, {None, None}}, 
+         FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+         GridLinesStyle -> Directive[
+           GrayLevel[0.5, 0.4]], 
+         Method -> {
+          "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+           "AxesInFront" -> True}, PlotRange -> {{0., 0.}, {0., 0.}}, 
+         PlotRangeClipping -> True, PlotRangePadding -> {
+           Scaled[0.02], 
+           Scaled[0.02]}, Ticks -> {Automatic, Automatic}}], ",", 
+       GraphicsBox[{{}, {}}, {
+        DisplayFunction -> Identity, PlotRangePadding -> {{
+            Scaled[0.05], 
+            Scaled[0.05]}, {
+            Scaled[0.05], 
+            Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
+         DisplayFunction -> Identity, Axes -> {True, True}, 
+         AxesLabel -> {None, None}, AxesOrigin -> {Automatic, Automatic}, 
+         DisplayFunction :> Identity, Frame -> True, 
+         FrameLabel -> {{None, None}, {None, None}}, 
+         FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+         GridLinesStyle -> Directive[
+           GrayLevel[0.5, 0.4]], 
+         Method -> {
+          "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+           "AxesInFront" -> True}, PlotRange -> {{0., 0.}, {0., 0.}}, 
+         PlotRangeClipping -> True, PlotRangePadding -> {
+           Scaled[0.02], 
+           Scaled[0.02]}, Ticks -> {Automatic, Automatic}}], ",", 
+       GraphicsBox[{{}, {}}, {
+        DisplayFunction -> Identity, PlotRangePadding -> {{
+            Scaled[0.05], 
+            Scaled[0.05]}, {
+            Scaled[0.05], 
+            Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
+         DisplayFunction -> Identity, Axes -> {True, True}, 
+         AxesLabel -> {None, None}, AxesOrigin -> {Automatic, Automatic}, 
+         DisplayFunction :> Identity, Frame -> True, 
+         FrameLabel -> {{None, None}, {None, None}}, 
+         FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+         GridLinesStyle -> Directive[
+           GrayLevel[0.5, 0.4]], 
+         Method -> {
+          "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+           "AxesInFront" -> True}, PlotRange -> {{0., 0.}, {0., 0.}}, 
+         PlotRangeClipping -> True, PlotRangePadding -> {
+           Scaled[0.02], 
+           Scaled[0.02]}, Ticks -> {Automatic, Automatic}}], ",", 
+       GraphicsBox[{{}, {}}, {
+        DisplayFunction -> Identity, PlotRangePadding -> {{
+            Scaled[0.05], 
+            Scaled[0.05]}, {
+            Scaled[0.05], 
+            Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
+         DisplayFunction -> Identity, Axes -> {True, True}, 
+         AxesLabel -> {None, None}, AxesOrigin -> {Automatic, Automatic}, 
+         DisplayFunction :> Identity, Frame -> True, 
+         FrameLabel -> {{None, None}, {None, None}}, 
+         FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+         GridLinesStyle -> Directive[
+           GrayLevel[0.5, 0.4]], 
+         Method -> {
+          "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+           "AxesInFront" -> True}, PlotRange -> {{0., 0.}, {0., 0.}}, 
+         PlotRangeClipping -> True, PlotRangePadding -> {
+           Scaled[0.02], 
+           Scaled[0.02]}, Ticks -> {Automatic, Automatic}}], ",", 
+       GraphicsBox[{{}, {}}, {
+        DisplayFunction -> Identity, PlotRangePadding -> {{
+            Scaled[0.05], 
+            Scaled[0.05]}, {
+            Scaled[0.05], 
+            Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
+         DisplayFunction -> Identity, Axes -> {True, True}, 
+         AxesLabel -> {None, None}, AxesOrigin -> {Automatic, Automatic}, 
+         DisplayFunction :> Identity, Frame -> True, 
+         FrameLabel -> {{None, None}, {None, None}}, 
+         FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+         GridLinesStyle -> Directive[
+           GrayLevel[0.5, 0.4]], 
+         Method -> {
+          "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+           "AxesInFront" -> True}, PlotRange -> {{0., 0.}, {0., 0.}}, 
+         PlotRangeClipping -> True, PlotRangePadding -> {
+           Scaled[0.02], 
+           Scaled[0.02]}, Ticks -> {Automatic, Automatic}}], ",", 
+       GraphicsBox[{{}, {}}, {
+        DisplayFunction -> Identity, PlotRangePadding -> {{
+            Scaled[0.05], 
+            Scaled[0.05]}, {
+            Scaled[0.05], 
+            Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
+         DisplayFunction -> Identity, Axes -> {True, True}, 
+         AxesLabel -> {None, None}, AxesOrigin -> {Automatic, Automatic}, 
+         DisplayFunction :> Identity, Frame -> True, 
+         FrameLabel -> {{None, None}, {None, None}}, 
+         FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+         GridLinesStyle -> Directive[
+           GrayLevel[0.5, 0.4]], 
+         Method -> {
+          "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+           "AxesInFront" -> True}, PlotRange -> {{0., 0.}, {0., 0.}}, 
+         PlotRangeClipping -> True, PlotRangePadding -> {
+           Scaled[0.02], 
+           Scaled[0.02]}, Ticks -> {Automatic, Automatic}}], ",", 
+       GraphicsBox[{{}, {}}, {
+        DisplayFunction -> Identity, PlotRangePadding -> {{
+            Scaled[0.05], 
+            Scaled[0.05]}, {
+            Scaled[0.05], 
+            Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
+         DisplayFunction -> Identity, Axes -> {True, True}, 
+         AxesLabel -> {None, None}, AxesOrigin -> {Automatic, Automatic}, 
+         DisplayFunction :> Identity, Frame -> True, 
+         FrameLabel -> {{None, None}, {None, None}}, 
+         FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+         GridLinesStyle -> Directive[
+           GrayLevel[0.5, 0.4]], 
+         Method -> {
+          "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+           "AxesInFront" -> True}, PlotRange -> {{0., 0.}, {0., 0.}}, 
+         PlotRangeClipping -> True, PlotRangePadding -> {
+           Scaled[0.02], 
+           Scaled[0.02]}, Ticks -> {Automatic, Automatic}}], ",", 
+       GraphicsBox[{{}, {}}, {
+        DisplayFunction -> Identity, PlotRangePadding -> {{
+            Scaled[0.05], 
+            Scaled[0.05]}, {
+            Scaled[0.05], 
+            Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
+         DisplayFunction -> Identity, Axes -> {True, True}, 
+         AxesLabel -> {None, None}, AxesOrigin -> {Automatic, Automatic}, 
+         DisplayFunction :> Identity, Frame -> True, 
+         FrameLabel -> {{None, None}, {None, None}}, 
+         FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+         GridLinesStyle -> Directive[
+           GrayLevel[0.5, 0.4]], 
+         Method -> {
+          "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+           "AxesInFront" -> True}, PlotRange -> {{0., 0.}, {0., 0.}}, 
+         PlotRangeClipping -> True, PlotRangePadding -> {
+           Scaled[0.02], 
+           Scaled[0.02]}, Ticks -> {Automatic, Automatic}}], ",", 
+       GraphicsBox[{{}, {}}, {
+        DisplayFunction -> Identity, PlotRangePadding -> {{
+            Scaled[0.05], 
+            Scaled[0.05]}, {
+            Scaled[0.05], 
+            Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, 
+         DisplayFunction -> Identity, Axes -> {True, True}, 
+         AxesLabel -> {None, None}, AxesOrigin -> {Automatic, Automatic}, 
+         DisplayFunction :> Identity, Frame -> True, 
+         FrameLabel -> {{None, None}, {None, None}}, 
+         FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+         GridLinesStyle -> Directive[
+           GrayLevel[0.5, 0.4]], 
+         Method -> {
+          "DefaultGraphicsInteraction" -> {
+            "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+             "Effects" -> {
+              "Highlight" -> {"ratio" -> 2}, 
+               "HighlightPoint" -> {"ratio" -> 2}, 
+               "Droplines" -> {
+                "freeformCursorMode" -> True, 
+                 "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+           "ScalingFunctions" -> None, "TransparentPolygonMesh" -> True, 
+           "AxesInFront" -> True}, PlotRange -> {{0., 0.}, {0., 0.}}, 
+         PlotRangeClipping -> True, PlotRangePadding -> {
+           Scaled[0.02], 
+           Scaled[0.02]}, Ticks -> {Automatic, Automatic}}], ",", 
+       RowBox[{"AxisLabel", "\[Rule]", 
+         RowBox[{"{", 
+           RowBox[{"\"y\"", ",", "\"x\""}], "}"}]}], ",", 
+       RowBox[{
+        "PlotLabel", "\[Rule]", 
+         "\"Stream Function and Velocity Potential Function\""}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "Null"}], "]"}], 
+   TemplateBox[{"\"Stream\"", "\"Potential\""}, "SwatchLegend", 
+    DisplayFunction -> (StyleBox[
+      StyleBox[
+       PaneBox[
+        TagBox[
+         GridBox[{{
+            TagBox[
+             GridBox[{{
+                GraphicsBox[{
+                  Directive[
+                   EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                   PointSize[0.5], 
+                   AbsoluteThickness[1.6], 
+                   RGBColor[0, 0, 1]], 
+                  RectangleBox[{0, 0}, {10, 10}, "RoundingRadius" -> 0]}, 
+                 AspectRatio -> Full, ImageSize -> {10, 10}, PlotRangePadding -> 
+                 None, ImagePadding -> Automatic, 
+                 BaselinePosition -> (Scaled[0.1] -> Baseline)], #}, {
+                GraphicsBox[{
+                  Directive[
+                   EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                   PointSize[0.5], 
+                   AbsoluteThickness[1.6], 
+                   RGBColor[1, 0.5, 0]], 
+                  RectangleBox[{0, 0}, {10, 10}, "RoundingRadius" -> 0]}, 
+                 AspectRatio -> Full, ImageSize -> {10, 10}, PlotRangePadding -> 
+                 None, ImagePadding -> Automatic, 
+                 BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}}, 
+              GridBoxAlignment -> {
+               "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
+              AutoDelete -> False, 
+              GridBoxDividers -> {
+               "Columns" -> {{False}}, "Rows" -> {{False}}}, 
+              GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}}, 
+              GridBoxSpacings -> {"Columns" -> {{0.3}}, "Rows" -> {{0.5}}}], 
+             "Grid"]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}], "Grid"], 
+        Alignment -> Left, AppearanceElements -> None, 
+        ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> "ResizeToFit"], 
+       LineIndent -> 0, StripOnInput -> False], {FontFamily -> "Arial"}, 
+      Background -> Automatic, StripOnInput -> False]& ), 
+    InterpretationFunction :> (RowBox[{"SwatchLegend", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{
+             InterpretationBox[
+              ButtonBox[
+               TooltipBox[
+                GraphicsBox[{{
+                   GrayLevel[0], 
+                   RectangleBox[{0, 0}]}, {
+                   GrayLevel[0], 
+                   RectangleBox[{1, -1}]}, {
+                   RGBColor[0, 0, 1], 
+                   RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                 "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                 FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
+                 FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                 Dynamic[{
+                   Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                StyleBox[
+                 RowBox[{"RGBColor", "[", 
+                   RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
+                 False]], Appearance -> None, BaseStyle -> {}, 
+               BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+               ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                 If[
+                  Not[
+                   AbsoluteCurrentValue["Deployed"]], 
+                  SelectionMove[Typeset`box$, All, Expression]; 
+                  FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                  FrontEnd`Private`$ColorSelectorInitialColor = 
+                   RGBColor[0, 0, 1]; 
+                  FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                  MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+               Automatic, Method -> "Preemptive"], 
+              RGBColor[0, 0, 1], Editable -> False, Selectable -> False], ",", 
+             InterpretationBox[
+              ButtonBox[
+               TooltipBox[
+                GraphicsBox[{{
+                   GrayLevel[0], 
+                   RectangleBox[{0, 0}]}, {
+                   GrayLevel[0], 
+                   RectangleBox[{1, -1}]}, {
+                   RGBColor[1, 0.5, 0], 
+                   RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                 "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                 FrameStyle -> 
+                 RGBColor[0.6666666666666666, 0.33333333333333337`, 0.], 
+                 FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                 Dynamic[{
+                   Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                StyleBox[
+                 RowBox[{"RGBColor", "[", 
+                   RowBox[{"1", ",", "0.5`", ",", "0"}], "]"}], NumberMarks -> 
+                 False]], Appearance -> None, BaseStyle -> {}, 
+               BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+               ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                 If[
+                  Not[
+                   AbsoluteCurrentValue["Deployed"]], 
+                  SelectionMove[Typeset`box$, All, Expression]; 
+                  FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                  FrontEnd`Private`$ColorSelectorInitialColor = 
+                   RGBColor[1, 0.5, 0]; 
+                  FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                  MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+               Automatic, Method -> "Preemptive"], 
+              RGBColor[1, 0.5, 0], Editable -> False, Selectable -> False]}], 
+           "}"}], ",", 
+         RowBox[{"{", 
+           RowBox[{#, ",", #2}], "}"}]}], "]"}]& ), Editable -> True]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
+ CellChangeTimes->{{3.844582797236602*^9, 3.844582797731321*^9}, 
+   3.8445832283588977`*^9, 3.8445832639203863`*^9, 3.8445833224059052`*^9, 
+   3.844583419685217*^9, 3.8445835179575696`*^9},
+ CellLabel->
+  "Out[136]=",ExpressionUUID->"9315a7f9-716e-46ae-8ed1-e9ee02cf1730"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{760, 601},
+WindowMargins->{{-33, Automatic}, {32, Automatic}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"dcd562de-d77d-4c33-9b43-7af9fabc33d4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 149, 3, 98, "Title",ExpressionUUID->"abae2fb3-3809-467a-8fd1-41ed0b642578"],
+Cell[CellGroupData[{
+Cell[754, 29, 210, 6, 105, "Section",ExpressionUUID->"0b9a835a-66a3-4e79-b037-350d2c135b51"],
+Cell[CellGroupData[{
+Cell[989, 39, 9404, 261, 615, "Code",ExpressionUUID->"409bde85-2695-4bee-9bb5-fa1f23090818"],
+Cell[10396, 302, 5359, 83, 93, "Message",ExpressionUUID->"cbb77441-55d2-43ff-808c-8e3735b0d14c"],
+Cell[15758, 387, 21570, 441, 346, "Output",ExpressionUUID->"9315a7f9-716e-46ae-8ed1-e9ee02cf1730"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
